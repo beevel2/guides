@@ -6,7 +6,7 @@
 
 3) Дождаться генерации ссылок и нажать "ВКЛ/ВЫКЛ", убедиться что компания в боте включена.
 
-4) На лединг между <head> и </head> добавить следующий код:
+4) На лединг между \<head\> и \</head\> добавить следующий код:
 ```hmtl
 <script>
 const campaign_id = ''; // Тут задается _id компании
@@ -113,17 +113,17 @@ fetch(`${api_addr}/link/${campaign_id}?fbc=${fbc}&fbp=${fbp}&user_agent=${window
 
 ВНИМАНИЕ! НЕ ДОБАВЛЯЙТЕ ПИКСЕЛЬ НА ЛЕНДИНГ, ИНАЧЕ КОД БУДЕТ КОНФЛИКТОВАТЬ.
 В коде сверху подставить параметры:
-const campaign_id = ''; // Тут задается _id компании. Его надо скопировать из поля _id в вашей компании внутри бота
-const fallback_url = ''; // Запасная ссылка на вступление в группу на случай, если бэк нашего сервиса выдаст ошибку
+const campaign_id = '';  Тут задается _id компании. Его надо скопировать из поля _id в вашей компании внутри бота
+const fallback_url = '';  Запасная ссылка на вступление в группу на случай, если бэк нашего сервиса выдаст ошибку
 
-5) Если у вас на сайте элемент <a> ведет на канал: убрать href и добавить onclick="redirectUser();". Например было:
-<a href="https://t.me/example" class=SomeClass> Перейти на канал  </a>
+5) Если у вас на сайте элемент \<a\> ведет на канал: убрать href и добавить onclick="redirectUser();". Например было:
+`<a href="https://t.me/example" class=SomeClass> Перейти на канал  </a>`
 Стало:
-<a onclick="redirectUser();" class=SomeClass> Перейти на канал  </a>
+`<a onclick="redirectUser();" class=SomeClass> Перейти на канал  </a>`
 
-Если другой элемент на сайте ведет на канал (не <a>) - обратитесь за консультацией в поддержку
+Если другой элемент на сайте ведет на канал (не \<a\>) - обратитесь за консультацией в поддержку
 
-6) в конец ссылки на ваш лендинг нужно добавить ?pixel=ВашАйдиПикселя&campaign_id={{campaign.id}}&adset_id={{adset.id}}&ad_id={{ad.id}}&campaign_name={{campaign.name}}&adset_name={{adset.name}}&ad_name={{ad.name}}&placement={{placement}}&site_source_name={{site_source_name}}
+6) в конец ссылки на ваш лендинг нужно добавить `?pixel=ВашАйдиПикселя&campaign_id={{campaign.id}}&adset_id={{adset.id}}&ad_id={{ad.id}}&campaign_name={{campaign.name}}&adset_name={{adset.name}}&ad_name={{ad.name}}&placement={{placement}}&site_source_name={{site_source_name}}`
 
 Если ссылка https://example.com/land то должно получиться https://example.com/land?pixel=ВашАйдиПикселя&campaign_id={{campaign.id}}&adset_id={{adset.id}}&ad_id={{ad.id}}&campaign_name={{campaign.name}}&adset_name={{adset.name}}&ad_name={{ad.name}}&placement={{placement}}&site_source_name={{site_source_name}}
 
